@@ -34,7 +34,7 @@ class Reader(threading.Thread):
             if not error:
                 uid = ":".join("{:03d}".format(a) for a in uid_raw)
                 if not rfid.select_tag(uid_raw):
-                    for ii in range(0, 12):
+                    for ii in range(0, 64):
                         if not rfid.card_auth(
                             rfid.auth_a,
                             ii,
